@@ -8,20 +8,29 @@ series */
 
 int fibonacciSerie(int n){
   // Print the header n  F(n-2)  F(n-1)  F(n)
-
+  printf("\nPrinting the fibonacci series from 0 to %d : \n", n);
+  printf("n \t\tF(n-2) \t\t\t\tF(n-1) \t\t\t\tFn \n");
+  printf("1 \t\t0 \t\t\t\t1 \t\t\t\t1 \n");
+  printf("2 \t\t1 \t\t\t\t1 \t\t\t\t2 \n");
   // Initialize vars last2, last1, count
-
+  unsigned long int last2 = 1;
+  unsigned long int last1 = 2;
+  unsigned long int fibn  = 0;
+  unsigned int count = 3;
+  
   // Repeat to build the series
-
-  // Store new value from add last2 + last1
-
-  // Print calculated values count, last2, last1, actual
-
-  // Move values
-
-  // Increase count to point the next number
-
-  // Repeat while count <= n
+  do{
+    // Store new value from add last2 + last1
+    fibn = last2 + last1;
+    // Print calculated values count, last2, last1, actual
+    printf("%u \t\t%lu \t\t\t\t%lu \t\t\t\t%lu \n", count, last2, last1, fibn);
+    // Move values
+    last2 = last1;
+    last1 = fibn;
+    // Increae count to point the next number
+    count++;
+  }while(count < n);// Repeat while count <= n
+  
   return 0; 
 }
 
